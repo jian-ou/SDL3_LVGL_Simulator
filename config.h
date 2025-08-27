@@ -8,6 +8,6 @@
 #define MY_DISP_HOR_RES 368
 #define MY_DISP_VER_RES 448
 
-void app_main(void);
+void App_main(void);
 
 #endif

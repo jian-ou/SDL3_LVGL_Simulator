@@ -24,7 +24,7 @@ Uint32 my_timer_callback(void *userdata, SDL_TimerID timerID, Uint32 interval)
 
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
 {
-  if (!SDL_CreateWindowAndRenderer("DisplaySIM", MY_DISP_HOR_RES, MY_DISP_VER_RES, 0, &window, &renderer))
+  if (!SDL_CreateWindowAndRenderer("SDL3_LVGL", MY_DISP_HOR_RES, MY_DISP_VER_RES, 0, &window, &renderer))
   {
     SDL_Log("Couldn't create window and renderer: %s", SDL_GetError());
     return SDL_APP_FAILURE;
@@ -43,7 +43,7 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
   lv_port_disp_init();
   lv_port_indev_init();
 
-  app_main();
+  App_main();
 
   return SDL_APP_CONTINUE;
 }
