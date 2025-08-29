@@ -8,8 +8,18 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIGURATION>")
 
 # This assumes the SDL source is available in vendored/SDL
 add_subdirectory(SDL EXCLUDE_FROM_ALL)
-set(LV_BUILD_CONF_PATH "lvgl_port/lv_conf.h")
+
+set(LV_BUILD_CONF_DIR "lvgl_port")
 add_subdirectory(lvgl)
+
+# add_subdirectory(ui_library)
+# target_include_directories(lib-ui PRIVATE
+#     ${CMAKE_CURRENT_LIST_DIR}
+#     ${CMAKE_CURRENT_LIST_DIR}/lvgl_port
+#     ${CMAKE_CURRENT_LIST_DIR}/ui_library
+# )
+
+# add_subdirectory(libexpat/expat)
 
 # 源文件
 file(GLOB SOURCES
@@ -23,3 +33,5 @@ add_executable(SDL_LVGL ${SOURCES} main.c)
 # Link to the actual SDL3 library.
 target_link_libraries(SDL_LVGL PRIVATE SDL3::SDL3)
 target_link_libraries(SDL_LVGL PRIVATE lvgl)
+# target_link_libraries(SDL_LVGL PRIVATE lib-ui)
+# target_link_libraries(lvgl PRIVATE expat)

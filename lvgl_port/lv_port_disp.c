@@ -1,11 +1,3 @@
-/**
- * @file lv_port_disp_template.c
- *
- */
-
-/*Copy this file as "lv_port_disp.c" and set this value to "1" to enable content*/
-#if 1
-
 /*********************
  *      INCLUDES
  *********************/
@@ -54,14 +46,8 @@ uint16_t lvgl_showbuf[MY_DISP_VER_RES * MY_DISP_HOR_RES];
 
 void lv_port_disp_init(void)
 {
-    /*-------------------------
-     * Initialize your display
-     * -----------------------*/
     disp_init();
 
-    /*------------------------------------
-     * Create a display and set a flush_cb
-     * -----------------------------------*/
     lv_display_t *disp = lv_display_create(MY_DISP_HOR_RES, MY_DISP_VER_RES);
     lv_display_set_flush_cb(disp, disp_flush);
 
@@ -127,9 +113,3 @@ static void disp_flush(lv_display_t *disp_drv, const lv_area_t *area, uint8_t *p
      *Inform the graphics library that you are ready with the flushing*/
     lv_display_flush_ready(disp_drv);
 }
-
-#else /*Enable this file at the top*/
-
-/*This dummy typedef exists purely to silence -Wpedantic.*/
-typedef int keep_pedantic_happy;
-#endif

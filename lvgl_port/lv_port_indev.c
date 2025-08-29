@@ -1,11 +1,3 @@
-/**
- * @file lv_port_indev_template.c
- *
- */
-
-/*Copy this file as "lv_port_indev.c" and set this value to "1" to enable content*/
-#if 1
-
 /*********************
  *      INCLUDES
  *********************/
@@ -124,9 +116,3 @@ static void touchpad_get_xy(int32_t *x, int32_t *y)
     (*x) = indev_touchpad_data.last_x;
     (*y) = indev_touchpad_data.last_y;
 }
-
-#else /*Enable this file at the top*/
-
-/*This dummy typedef exists purely to silence -Wpedantic.*/
-typedef int keep_pedantic_happy;
-#endif

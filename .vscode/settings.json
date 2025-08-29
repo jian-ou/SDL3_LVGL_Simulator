@@ -7,6 +7,7 @@
     "sdl_main.h": "c",
     "lvgl.h": "c",
     "config.h": "c",
-    "lv_port_indev.h": "c"
+    "lv_port_indev.h": "c",
+    "lv_conf.h": "c"
   }
 }
